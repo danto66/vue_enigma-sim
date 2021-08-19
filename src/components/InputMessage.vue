@@ -1,6 +1,6 @@
 <template>
 	<input
-		class="border-black border-2 w-full p-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-300"
+		class="w-full"
 		type="text"
 		name=""
 		id=""
@@ -8,7 +8,7 @@
 	/>
 
 	<button
-		class="block mt-2 ml-auto px-6 py-2 bg-green-300 text-green-900 border-black border-2 rounded-xl"
+		class="btn block mt-2 ml-auto px-3 py-2 text-sm font-bold uppercase tracking-widest bg-blue-500 text-white rounded-lg"
 	>
 		Encrypt
 	</button>
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-	name: 'InputMessage',
+	name: 'InputMessage'
 };
 </script>
 

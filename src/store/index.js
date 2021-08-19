@@ -2,24 +2,29 @@ import { createStore } from 'vuex';
 
 export default createStore({
 	state: {
-		rotorActive: [
+		rotor: [
 			{
 				id: 'R1',
 				position: 1,
-				data: null
+				type: null
 			},
 			{
 				id: 'R2',
 				position: 1,
-				data: null
+				type: null
 			},
 			{
 				id: 'R3',
 				position: 1,
-				data: null
+				type: null
 			}
 		],
-		rotorData: [
+		reflector: {
+			id: 'RF1',
+			position: 1,
+			type: null
+		},
+		rotorTypes: [
 			{
 				name: 'I',
 				wiring: [
@@ -113,30 +118,76 @@ export default createStore({
 					[20, 20]
 				]
 			}
-		]
+		],
+		reflectorTypes: [
+			{
+				name: 'I',
+				wiring: [
+					[25, 25],
+					[18, 18],
+					[21, 21],
+					[8, 8],
+					[17, 17],
+					[19, 19],
+					[12, 12],
+					[4, 4],
+					[16, 16],
+					[24, 24],
+					[14, 14],
+					[7, 7],
+					[15, 15],
+					[11, 11],
+					[13, 13],
+					[9, 9],
+					[5, 5],
+					[2, 2],
+					[6, 6],
+					[26, 26],
+					[3, 3],
+					[23, 23],
+					[22, 22],
+					[10, 10],
+					[1, 1],
+					[20, 20]
+				]
+			}
+		],
+		message: {
+			input: '',
+			output: '',
+			processed: []
+		}
 	},
 	mutations: {
 		incrementRotorPosition(state, index) {
-			if (state.rotorActive[index].position >= 26) {
-				state.rotorActive[index].position = 1;
+			if (state.rotor[index].position >= 26) {
+				state.rotor[index].position = 1;
 			} else {
-				state.rotorActive[index].position += 1;
+				state.rotor[index].position += 1;
 			}
 		},
 		decrementRotorPosition(state, index) {
-			if (state.rotorActive[index].position <= 1) {
-				state.rotorActive[index].position = 26;
+			if (state.rotor[index].position <= 1) {
+				state.rotor[index].position = 26;
 			} else {
-				state.rotorActive[index].position -= 1;
+				state.rotor[index].position -= 1;
 			}
 		},
-		initRotorActiveData(state) {
-			state.rotorActive.forEach((el, index) => {
-				state.rotorActive[index].data = state.rotorData[0];
+		initRotorType(state) {
+			state.rotor.forEach((el, i, arr) => {
+				arr[i].type = { ...state.rotorTypes[0] };
 			});
 		},
-		setRotorActiveData(state, payload) {
-			state.rotorActive[payload.index].data = payload.data;
+		setRotorType(state, payload) {
+			state.rotor[payload.index].type = { ...payload.type };
+		},
+		initReflectorType(state) {
+			state.reflector.type = { ...state.reflectorTypes[0] };
+		},
+		splitMessage(state) {
+			state.message.processed = [
+				...state.message.input.replace(/\s/g, '').toLowerCase()
+			];
 		}
 	},
 	actions: {},

@@ -1,13 +1,17 @@
 <template>
-	<div class="flex flex-col space-y-2 w-16">
-		<div>
-			<p class="text-center text-base">{{ rotor.id }}</p>
+	<div class="flex flex-col w-16">
+		<div class="shadow rounded">
+			<p class="rounded-t text-center text-base bg-blue-100 border border-b-0">
+				{{ rotor.id }}
+			</p>
 
-			<p class="text-center text-base">{{ rotor.data.name }}</p>
+			<p class="rounded-b text-center text-base py-2 border border-t-0">
+				{{ rotor.type.name }}
+			</p>
 		</div>
 
 		<button
-			class="bg-green-300 border-2 border-black rounded-t-xl"
+			class="bg-blue-500 text-white rounded-t-lg btn mt-2"
 			@click="incrementRotorPosition(index)"
 		>
 			<svg
@@ -26,12 +30,12 @@
 			</svg>
 		</button>
 
-		<p class="p-4 text-center text-2xl border-black border-2">
+		<p class="p-4 mt-2 text-center text-2xl border-black border-2 rounded">
 			{{ rotor.position }}
 		</p>
 
 		<button
-			class="bg-green-300 border-2 border-black rounded-b-xl"
+			class="bg-blue-500 text-white rounded-b-lg btn mt-2"
 			@click="decrementRotorPosition(index)"
 		>
 			<svg
