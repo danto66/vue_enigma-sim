@@ -5,117 +5,117 @@ export default createStore({
 		rotor: [
 			{
 				id: 'R1',
-				position: 1,
+				position: 0,
 				type: null
 			},
 			{
 				id: 'R2',
-				position: 1,
+				position: 0,
 				type: null
 			},
 			{
 				id: 'R3',
-				position: 1,
+				position: 0,
 				type: null
 			}
 		],
 		reflector: {
 			id: 'RF1',
-			position: 1,
+			position: 0,
 			type: null
 		},
 		rotorTypes: [
 			{
 				name: 'I',
 				wiring: [
-					[5, 21],
-					[11, 23],
-					[13, 25],
-					[6, 7],
-					[12, 1],
-					[7, 4],
-					[4, 6],
-					[17, 16],
-					[22, 22],
-					[26, 26],
+					[4, 20],
+					[10, 22],
+					[12, 24],
+					[5, 6],
+					[11, 0],
+					[6, 3],
+					[3, 5],
+					[16, 15],
+					[21, 21],
+					[25, 25],
+					[13, 1],
+					[19, 4],
 					[14, 2],
-					[20, 5],
-					[15, 3],
-					[23, 11],
-					[25, 13],
-					[8, 20],
-					[24, 8],
-					[21, 24],
-					[19, 19],
-					[16, 12],
-					[1, 18],
-					[9, 9],
+					[22, 10],
+					[24, 12],
+					[7, 19],
+					[23, 7],
+					[20, 23],
+					[18, 18],
+					[15, 11],
+					[0, 17],
+					[8, 8],
+					[1, 13],
+					[17, 16],
 					[2, 14],
-					[18, 17],
-					[3, 15],
-					[10, 10]
+					[9, 9]
 				]
 			},
 			{
 				name: 'II',
 				wiring: [
-					[1, 1],
-					[10, 10],
-					[4, 16],
-					[11, 3],
-					[19, 26],
-					[9, 23],
-					[18, 18],
-					[21, 12],
-					[24, 6],
-					[2, 2],
-					[12, 4],
-					[8, 11],
-					[23, 15],
-					[20, 20],
-					[13, 25],
-					[3, 21],
+					[0, 0],
+					[9, 9],
+					[3, 15],
+					[10, 2],
+					[18, 25],
+					[8, 22],
 					[17, 17],
-					[7, 7],
-					[26, 5],
-					[14, 14],
-					[16, 8],
-					[25, 24],
-					[6, 13],
-					[22, 9],
-					[15, 22],
-					[5, 19]
+					[20, 11],
+					[23, 5],
+					[1, 1],
+					[11, 3],
+					[7, 10],
+					[22, 14],
+					[19, 19],
+					[12, 24],
+					[2, 20],
+					[16, 16],
+					[6, 6],
+					[25, 4],
+					[13, 13],
+					[15, 7],
+					[24, 23],
+					[5, 12],
+					[21, 8],
+					[14, 21],
+					[4, 18]
 				]
 			},
 			{
 				name: 'III',
 				wiring: [
-					[25, 25],
-					[18, 18],
-					[21, 21],
-					[8, 8],
-					[17, 17],
-					[19, 19],
-					[12, 12],
-					[4, 4],
-					[16, 16],
 					[24, 24],
-					[14, 14],
+					[17, 17],
+					[20, 20],
 					[7, 7],
-					[15, 15],
+					[16, 16],
+					[18, 18],
 					[11, 11],
-					[13, 13],
-					[9, 9],
-					[5, 5],
-					[2, 2],
-					[6, 6],
-					[26, 26],
 					[3, 3],
+					[15, 15],
 					[23, 23],
-					[22, 22],
+					[13, 13],
+					[6, 6],
+					[14, 14],
 					[10, 10],
+					[12, 12],
+					[8, 8],
+					[4, 4],
 					[1, 1],
-					[20, 20]
+					[5, 5],
+					[25, 25],
+					[2, 2],
+					[22, 22],
+					[21, 21],
+					[9, 9],
+					[0, 0],
+					[19, 19]
 				]
 			}
 		],
@@ -123,32 +123,32 @@ export default createStore({
 			{
 				name: 'I',
 				wiring: [
-					[25, 25],
-					[18, 18],
-					[21, 21],
-					[8, 8],
-					[17, 17],
-					[19, 19],
-					[12, 12],
-					[4, 4],
-					[16, 16],
 					[24, 24],
-					[14, 14],
+					[17, 17],
+					[20, 20],
 					[7, 7],
-					[15, 15],
+					[16, 16],
+					[18, 18],
 					[11, 11],
-					[13, 13],
-					[9, 9],
-					[5, 5],
-					[2, 2],
-					[6, 6],
-					[26, 26],
 					[3, 3],
+					[15, 15],
 					[23, 23],
-					[22, 22],
+					[13, 13],
+					[6, 6],
+					[14, 14],
 					[10, 10],
+					[12, 12],
+					[8, 8],
+					[4, 4],
 					[1, 1],
-					[20, 20]
+					[5, 5],
+					[25, 25],
+					[2, 2],
+					[22, 22],
+					[21, 21],
+					[9, 9],
+					[0, 0],
+					[19, 19]
 				]
 			}
 		],
@@ -160,20 +160,20 @@ export default createStore({
 	},
 	mutations: {
 		incrementRotorPosition(state, index) {
-			if (state.rotor[index].position >= 26) {
-				state.rotor[index].position = 1;
+			if (state.rotor[index].position >= 25) {
+				state.rotor[index].position = 0;
 			} else {
 				state.rotor[index].position += 1;
 			}
 		},
 		decrementRotorPosition(state, index) {
-			if (state.rotor[index].position <= 1) {
-				state.rotor[index].position = 26;
+			if (state.rotor[index].position <= 0) {
+				state.rotor[index].position = 25;
 			} else {
 				state.rotor[index].position -= 1;
 			}
 		},
-		initRotorType(state) {
+		setDefaultRotorType(state) {
 			state.rotor.forEach((el, i, arr) => {
 				arr[i].type = { ...state.rotorTypes[0] };
 			});
@@ -181,13 +181,8 @@ export default createStore({
 		setRotorType(state, payload) {
 			state.rotor[payload.index].type = { ...payload.type };
 		},
-		initReflectorType(state) {
+		setDefaulReflectorType(state) {
 			state.reflector.type = { ...state.reflectorTypes[0] };
-		},
-		splitMessage(state) {
-			state.message.processed = [
-				...state.message.input.replace(/\s/g, '').toLowerCase()
-			];
 		}
 	},
 	actions: {},
