@@ -152,11 +152,7 @@ export default createStore({
 				]
 			}
 		],
-		message: {
-			input: '',
-			output: '',
-			processed: []
-		}
+		encryptedMessage: ''
 	},
 	mutations: {
 		incrementRotorPosition(state, index) {
@@ -183,6 +179,18 @@ export default createStore({
 		},
 		setDefaulReflectorType(state) {
 			state.reflector.type = { ...state.reflectorTypes[0] };
+		},
+		setEncryptedMessage(state, message) {
+			state.encryptedMessage = message;
+		}
+	},
+	getters: {
+		getEncryptedMessage(state) {
+			let msg = '';
+			for (let i = 0; i < state.encryptedMessage.length; i += 4) {
+				msg += state.encryptedMessage.substring(i, i + 4) + ' ';
+			}
+			return msg;
 		}
 	},
 	actions: {},

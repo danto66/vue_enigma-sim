@@ -37,7 +37,7 @@ export default {
 	},
 	computed: { ...mapState(['rotor', 'reflector']) },
 	methods: {
-		...mapMutations(['incrementRotorPosition']),
+		...mapMutations(['incrementRotorPosition', 'setEncryptedMessage']),
 		convertMessageToArray(message) {
 			return [...message.replace(/\s/g, '').toLowerCase()];
 		},
@@ -90,15 +90,16 @@ export default {
 		encryptMessage() {
 			this.validateMessageByAlphabet();
 
-			if (!this.message) {
+			let arrayMessage = this.convertMessageToArray(this.message);
+
+			if (!this.message || !arrayMessage.length) {
 				this.setError(this.errorMessage.whenEmpty);
 				setTimeout(() => {
-					if (!this.message) this.error = '';
+					if (!this.message || !arrayMessage.length) this.error = '';
 				}, 1000);
 			}
 
 			if (!this.error) {
-				let arrayMessage = this.convertMessageToArray(this.message);
 				let charCodes = [];
 
 				for (let i = 0; i < arrayMessage.length; i++) {
@@ -117,11 +118,7 @@ export default {
 				}
 
 				console.log(charCodes.join(''));
-
-				// console.log(arr);
-				// let newChar = this.getNewCharCode(char, this.rotor[0], true);
-
-				// console.log(newChar);
+				this.setEncryptedMessage(charCodes.join(''));
 			}
 		}
 	}

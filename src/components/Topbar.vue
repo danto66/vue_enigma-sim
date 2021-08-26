@@ -1,8 +1,8 @@
 <template>
 	<div
-		class="h-14 rounded-b-lg flex w-full px-4 border-b-2 border-gray-900 shadow-md -mb-2 z-10 relative bg-white"
+		class="flex flex-row items-center h-16 rounded-b-lg px-4 md:px-12 lg:px-24 border-b-2 border-gray-900 shadow-md bg-white"
 	>
-		<p class="text-lg font-bold my-auto">
+		<p class="text-xl font-bold inline-flex">
 			{{ title }}
 		</p>
 	</div>

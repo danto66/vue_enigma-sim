@@ -24,7 +24,7 @@
 			</button>
 
 			<p class="p-4 mt-2 text-center text-2xl border-black border-2 rounded-lg bg-white">
-				{{ rotor.position }}
+				{{ rotor.position + 1 }}
 			</p>
 
 			<button class="btn-3d btn-blue rounded-b-lg mt-2" @click="decrementRotorPosition(index)">
