@@ -4,8 +4,10 @@
 			<Topbar title="Enigma Simulator" />
 		</div>
 
-		<div class="px-4 md:px-12 lg:px-24 w-full sm:mx-auto py-6 sm:flex h-full">
-			<div class="sm:w-3/5">
+		<div
+			class="px-4 md:px-12 lg:px-24 xl:px-48 w-full sm:mx-auto py-6 sm:flex sm:space-x-6 md:space-x-12 lg:space-x-18 xl:space-x-24 h-full"
+		>
+			<div class="sm:w-1/2">
 				<div class="flex justify-between">
 					<button
 						class="sm:hidden btn-3d btn-white rounded-lg px-2 py-1 inline-flex"
@@ -76,11 +78,13 @@
 				</div>
 			</div>
 
-			<div class="hidden sm:block border-l-2 border-gray-300 sm:mx-4 md:mx-12"></div>
+			<!-- <div class="hidden sm:block lg:border-l-2 lg:border-gray-300 sm:mx-2 md:mx-4 lg:mx-12 xl:mx-16"></div> -->
 
-			<div class="hidden sm:block sm:w-2/5 min-h-full">
-				<p class="font-bold text-lg">Configuration</p>
-				<div class="mt-2"><Configuration /></div>
+			<div class="hidden sm:block sm:w-1/2 ">
+				<div class="bg-white rounded-lg border shadow p-4">
+					<p class="font-bold text-lg">Configuration</p>
+					<div class="mt-2"><Configuration /></div>
+				</div>
 			</div>
 		</div>
 

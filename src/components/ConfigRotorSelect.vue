@@ -14,7 +14,7 @@
 
 <script>
 export default {
-	name: 'SettingRotor',
+	name: 'ConfigRotorSelect',
 	props: ['label', 'options', 'rotorIndex']
 };
 </script>

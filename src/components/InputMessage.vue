@@ -35,7 +35,7 @@ export default {
 			}
 		};
 	},
-	computed: { ...mapState(['rotor', 'reflector']) },
+	computed: { ...mapState(['rotor', 'reflector', 'plugboard']) },
 	methods: {
 		...mapMutations(['incrementRotorPosition', 'setEncryptedMessage']),
 		convertMessageToArray(message) {
@@ -105,6 +105,9 @@ export default {
 				for (let i = 0; i < arrayMessage.length; i++) {
 					let charCode = this.convertCharToNumber(arrayMessage[i]);
 
+					let plugboardPairIn = this.plugboard[charCode].pair;
+					plugboardPairIn != null ? (charCode = plugboardPairIn) : '';
+
 					this.spinRotor();
 					charCode = this.getNewCharCode(charCode, this.rotor[0], true);
 					charCode = this.getNewCharCode(charCode, this.rotor[1], true);
@@ -114,10 +117,12 @@ export default {
 					charCode = this.getNewCharCode(charCode, this.rotor[1], false);
 					charCode = this.getNewCharCode(charCode, this.rotor[0], false);
 
+					let plugboardPairOut = this.plugboard[charCode].pair;
+					plugboardPairOut != null ? (charCode = plugboardPairOut) : '';
+
 					charCodes.push(this.convertNumberToChar(charCode));
 				}
 
-				console.log(charCodes.join(''));
 				this.setEncryptedMessage(charCodes.join(''));
 			}
 		}
