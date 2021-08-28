@@ -36,7 +36,7 @@
 
 		<div class="w-full border-gray-300 border-t-2 my-4"></div>
 
-		<div class="mt-2" v-for="(plug, index) in $store.state.plugPoint" :key="index">
+		<div class="mt-2" v-for="(plug, index) in this.getPlugPoint" :key="index">
 			<ConfigPlugboardPairList :pointA="plug.pointA.char" :pointB="plug.pointB.char" :plugPointIndex="index" />
 		</div>
 	</div>
@@ -76,7 +76,7 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters(['getPlugboardData', 'countPlugPoint'])
+		...mapGetters(['getPlugboardData', 'countPlugPoint', 'getPlugPoint'])
 	}
 };
 </script>

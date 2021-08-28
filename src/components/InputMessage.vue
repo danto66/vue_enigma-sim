@@ -1,5 +1,7 @@
 <template>
-	<div class="p-2 border shadow bg-white rounded-lg">
+	<p class="font-bold text-lg">Input Message</p>
+
+	<div class="mt-4">
 		<input
 			@keyup="validateMessageByAlphabet"
 			v-model="message"
@@ -37,26 +39,23 @@ export default {
 	},
 	computed: { ...mapState(['rotor', 'reflector', 'plugboard']) },
 	methods: {
-		...mapMutations(['incrementRotorPosition', 'setEncryptedMessage']),
+		...mapMutations(['incrementRotorPosition', 'setEncryptedMessage', 'spinRotor']),
 		convertMessageToArray(message) {
 			return [...message.replace(/\s/g, '').toLowerCase()];
 		},
-		convertCharToNumber(char) {
+		convertCharToCharCode(char) {
 			return char.charCodeAt() - 97; // a = 0
 		},
-		convertNumberToChar(number) {
-			return String.fromCharCode(number + 97); // 0 = a
+		convertCharCodeToChar(charCode) {
+			return String.fromCharCode(charCode + 97); // 0 = a
 		},
 		getNewCharCode(charCode, rotor, forward) {
-			let charCodeOut = 0;
 			let charCodeIn = charCode + rotor.position;
 			charCodeIn > 25 ? (charCodeIn -= 26) : '';
 
-			if (forward) {
-				charCodeOut = rotor.type.wiring[charCodeIn][0] - rotor.position;
-			} else {
-				charCodeOut = rotor.type.wiring[charCodeIn][1] - rotor.position;
-			}
+			let rotorWiringIndex = forward ? 0 : 1;
+
+			let charCodeOut = rotor.type.wiring[charCodeIn][rotorWiringIndex] - rotor.position;
 			charCodeOut < 0 ? (charCodeOut += 26) : '';
 
 			return charCodeOut;
@@ -71,39 +70,23 @@ export default {
 				this.setError('');
 			}
 		},
-		spinRotor() {
-			this.rotor[0].position += 1;
-			if (this.rotor[0].position == 26) {
-				this.rotor[0].position = 0;
-				this.rotor[1].position += 1;
-
-				if (this.rotor[1].position == 26) {
-					this.rotor[1].position = 0;
-					this.rotor[2].position += 1;
-
-					if (this.rotor[2].position == 26) {
-						this.rotor[2].position = 0;
-					}
-				}
-			}
-		},
 		encryptMessage() {
 			this.validateMessageByAlphabet();
 
-			let arrayMessage = this.convertMessageToArray(this.message);
+			let messageArray = this.convertMessageToArray(this.message);
 
-			if (!this.message || !arrayMessage.length) {
+			if (!this.message || !messageArray.length) {
 				this.setError(this.errorMessage.whenEmpty);
 				setTimeout(() => {
-					if (!this.message || !arrayMessage.length) this.error = '';
+					if (!this.message || !messageArray.length) this.error = '';
 				}, 1000);
 			}
 
 			if (!this.error) {
 				let charCodes = [];
 
-				for (let i = 0; i < arrayMessage.length; i++) {
-					let charCode = this.convertCharToNumber(arrayMessage[i]);
+				for (let i = 0; i < messageArray.length; i++) {
+					let charCode = this.convertCharToCharCode(messageArray[i]);
 
 					let plugboardPairIn = this.plugboard[charCode].pair;
 					plugboardPairIn != null ? (charCode = plugboardPairIn) : '';
@@ -120,7 +103,7 @@ export default {
 					let plugboardPairOut = this.plugboard[charCode].pair;
 					plugboardPairOut != null ? (charCode = plugboardPairOut) : '';
 
-					charCodes.push(this.convertNumberToChar(charCode));
+					charCodes.push(this.convertCharCodeToChar(charCode));
 				}
 
 				this.setEncryptedMessage(charCodes.join(''));

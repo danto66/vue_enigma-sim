@@ -4,10 +4,10 @@
 			<Topbar title="Enigma Simulator" />
 		</div>
 
-		<div
-			class="px-4 md:px-12 lg:px-24 xl:px-48 w-full sm:mx-auto py-6 sm:flex sm:space-x-6 md:space-x-12 lg:space-x-18 xl:space-x-24 h-full"
-		>
-			<div class="sm:w-1/2">
+		<!-- konten body -->
+		<div class="mx-4 my-6 sm:flex sm:space-x-6 md:mx-12 lg:mx-24 xl:mx-48">
+			<!-- bagian kiri -->
+			<div class="sm:w-3/5 md:w-1/2">
 				<div class="flex justify-between">
 					<button
 						class="sm:hidden btn-3d btn-white rounded-lg px-2 py-1 inline-flex"
@@ -57,34 +57,32 @@
 					</button>
 				</div>
 
-				<div class=" mt-6">
+				<base-card class="mt-6 p-4">
 					<p class="font-bold text-lg">Rotor</p>
 
-					<div class="flex justify-between mt-2">
+					<div class="flex justify-between mt-4">
 						<Rotor v-for="(r, index) in rotor" :key="r.id" :rotor="r" :index="index" />
 					</div>
-				</div>
+				</base-card>
 
-				<div class="mt-6">
-					<p class="font-bold text-lg">Output Message</p>
+				<base-card class="mt-6 p-4">
+					<EncryptedMessage />
+				</base-card>
 
-					<EncryptedMessage class="mt-2" />
-				</div>
-
-				<div class="mt-6">
-					<p class="font-bold text-lg">Input Message</p>
-
-					<InputMessage class="mt-2" />
-				</div>
+				<base-card class="mt-6 p-4">
+					<InputMessage />
+				</base-card>
 			</div>
 
-			<!-- <div class="hidden sm:block lg:border-l-2 lg:border-gray-300 sm:mx-2 md:mx-4 lg:mx-12 xl:mx-16"></div> -->
+			<!-- pemisah -->
+			<div class="hidden md:block border-l-2 border-gray-300"></div>
 
-			<div class="hidden sm:block sm:w-1/2 ">
-				<div class="bg-white rounded-lg border shadow p-4">
+			<!-- bagian kanan -->
+			<div class="hidden sm:block sm:w-2/5 md:w-1/2">
+				<base-card class="p-4">
 					<p class="font-bold text-lg">Configuration</p>
-					<div class="mt-2"><Configuration /></div>
-				</div>
+					<div class="mt-4"><Configuration /></div>
+				</base-card>
 			</div>
 		</div>
 
@@ -107,6 +105,7 @@ import BaseModal from './components/BaseModal.vue';
 import Configuration from './components/Configuration.vue';
 import Help from './components/Help.vue';
 import Footer from './components/Footer.vue';
+import BaseCard from './components/BaseCard.vue';
 import { mapState, mapMutations } from 'vuex';
 
 export default {
@@ -119,7 +118,8 @@ export default {
 		BaseModal,
 		Configuration,
 		Help,
-		Footer
+		Footer,
+		BaseCard
 	},
 	data: function() {
 		return {
@@ -131,7 +131,7 @@ export default {
 		...mapState(['rotor'])
 	},
 	methods: {
-		...mapMutations(['setDefaulReflectorType', 'setDefaultRotorType']),
+		...mapMutations(['initReflectorType', 'initRotorType', 'initPlugboard']),
 		showModal(modalBody) {
 			this.currentModalBody = modalBody;
 			this.isModalVisible = true;
@@ -143,8 +143,9 @@ export default {
 		}
 	},
 	created: function() {
-		this.setDefaultRotorType();
-		this.setDefaulReflectorType();
+		this.initRotorType();
+		this.initReflectorType();
+		this.initPlugboard();
 	}
 };
 </script>

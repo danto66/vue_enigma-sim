@@ -1,10 +1,10 @@
 <template>
-	<div
-		class="flex flex-row items-center h-16 rounded-b-lg px-4 md:px-12 lg:px-24 xl:px-48 border-b-2 border-gray-900 shadow-md bg-white"
-	>
-		<p class="text-xl font-bold inline-flex">
-			{{ title }}
-		</p>
+	<div class="h-16 rounded-b-lg border-b-2 border-gray-900 shadow-md bg-white flex items-center">
+		<div class="mx-4 md:mx-12 lg:mx-24 xl:mx-48">
+			<p class="text-xl font-bold">
+				{{ title }}
+			</p>
+		</div>
 	</div>
 </template>
 
