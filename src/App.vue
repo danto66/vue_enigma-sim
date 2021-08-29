@@ -9,10 +9,7 @@
 			<!-- bagian kiri -->
 			<div class="sm:w-3/5 md:w-1/2">
 				<div class="flex justify-between">
-					<button
-						class="sm:hidden btn-3d btn-white rounded-lg px-2 py-1 inline-flex"
-						@click="showModal('Configuration')"
-					>
+					<button class="sm:hidden btn-3d btn-white btn-text-sm inline-flex" @click="showModal('Configuration')">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="h-6 w-6"
@@ -34,10 +31,10 @@
 							/>
 						</svg>
 
-						<span class="font-semibold ml-1">Configuration</span>
+						<span class="ml-1">Configuration</span>
 					</button>
 
-					<button class="btn-3d btn-white px-2 py-1 rounded-lg inline-flex" @click="showModal('Help')">
+					<button class="btn-3d btn-white btn-text-sm inline-flex" @click="showModal('Help')">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							class="h-6 w-6"
@@ -53,7 +50,7 @@
 							/>
 						</svg>
 
-						<span class="font-semibold ml-1">Help</span>
+						<span class="ml-1">Help</span>
 					</button>
 				</div>
 

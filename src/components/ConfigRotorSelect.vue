@@ -4,7 +4,7 @@
 	</label>
 
 	<div class="relative">
-		<select class="w-full" v-model="$store.state.rotor[rotorIndex].type">
+		<select class="w-full" v-model="rotor[rotorIndex].type">
 			<option v-for="(option, index) in options" :key="index" :value="option">
 				{{ option.name }}
 			</option>
@@ -13,9 +13,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
 	name: 'ConfigRotorSelect',
-	props: ['label', 'options', 'rotorIndex']
+	props: ['label', 'options', 'rotorIndex'],
+	computed: {
+		...mapState(['rotor'])
+	}
 };
 </script>
 

@@ -106,12 +106,6 @@ export default createStore({
 		},
 		countPlugPoint(state) {
 			return state.plugPoint.length;
-		},
-		getRotor(state) {
-			return state.rotor;
-		},
-		getPlugPoint(state) {
-			return state.plugPoint;
 		}
 	},
 	actions: {},

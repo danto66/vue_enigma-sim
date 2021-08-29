@@ -22,6 +22,8 @@
 					</button>
 				</div>
 
+				<hr class="my-4" />
+
 				<div class="mt-4">
 					<slot></slot>
 				</div>

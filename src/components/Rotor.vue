@@ -1,12 +1,12 @@
 <template>
 	<div class="p-2 rounded-lg border border-gray-900">
 		<div class="flex flex-col w-16">
-			<div class="rounded-lg border-black border-2 bg-blue-100">
+			<div class="rounded-lg border-gray-900 border-2 bg-blue-100">
 				<div class="text-center">
 					{{ rotor.id }}
 				</div>
 
-				<div class="text-center rounded-lg border-black border-t-2 bg-white">
+				<div class="text-center rounded-lg border-gray-900 border-t-2 bg-white">
 					{{ rotor.type.name }}
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 				</svg>
 			</button>
 
-			<p class="p-4 mt-2 text-center text-2xl border-black border-2 rounded-lg bg-white">
+			<p class="p-4 mt-2 text-center text-2xl border-gray-900 border-2 rounded-lg bg-white">
 				{{ rotor.position + 1 }}
 			</p>
 

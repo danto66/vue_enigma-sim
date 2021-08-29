@@ -1,16 +1,16 @@
 <template>
-	<p class="text-sm font-semibold">Rotor Type</p>
+	<p class="text-sm font-bold">Rotor Type</p>
 
 	<div class="flex space-x-2 mt-2">
-		<div v-for="(r, index) in this.getRotor" :key="index" class="flex flex-col w-full">
-			<ConfigRotorSelect :options="this.$store.state.moduleRotor.rotorTypes" :label="r.id" :rotorIndex="index" />
+		<div v-for="(r, index) in this.rotor" :key="index" class="flex flex-col w-full">
+			<ConfigRotorSelect :options="this.rotorTypes" :label="r.id" :rotorIndex="index" />
 		</div>
 	</div>
 </template>
 
 <script>
 import ConfigRotorSelect from './ConfigRotorSelect.vue';
-import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
 	name: 'ConfigRotor',
@@ -18,7 +18,10 @@ export default {
 		ConfigRotorSelect
 	},
 	computed: {
-		...mapGetters(['getRotor'])
+		...mapState({
+			rotor: (state) => state.rotor,
+			rotorTypes: (state) => state.moduleRotor.rotorTypes
+		})
 	}
 };
 </script>

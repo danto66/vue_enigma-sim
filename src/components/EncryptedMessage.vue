@@ -20,7 +20,7 @@
 				</button>
 			</div>
 
-			<span v-if="isCopied" class="bg-gray-900 text-gray-100 font-semibold text-xs font-sans rounded px-2 py-1 left-0">
+			<span v-if="isCopied" class="bg-gray-900 text-gray-100 font-bold text-xs font-sans rounded px-2 py-1 left-0">
 				Copied!
 			</span>
 		</div>

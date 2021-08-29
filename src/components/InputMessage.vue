@@ -16,7 +16,7 @@
 
 		<p class="h-4 text-xs text-red-500 italic font-sans">{{ error }}</p>
 
-		<button @click="encryptMessage()" class="btn-3d btn-blue btn-text block mt-2 ml-auto">
+		<button @click="encryptMessage()" class="btn-3d btn-blue btn-text btn-uppercase block mt-2 ml-auto">
 			Encrypt
 		</button>
 	</div>

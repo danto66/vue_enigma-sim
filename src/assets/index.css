@@ -17,14 +17,14 @@
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: #d6dee1;
+		background-color: #e5e7eb;
 		border-radius: 20px;
 		border: 6px solid transparent;
 		background-clip: content-box;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
-		background-color: #a8bbbf;
+		background-color: #9ca3af;
 	}
 
 	.label-setting {
@@ -46,14 +46,14 @@
 		transform: translateY(4px);
 	}
 
-	.btn-blue {
-		@apply bg-blue-500 text-white border-2 border-blue-900;
-	}
-
 	.btn-3d-disabled {
 		@apply cursor-default;
 		box-shadow: 0px 4px #9ca3af;
 		margin-bottom: 4px;
+	}
+
+	.btn-blue {
+		@apply bg-blue-500 text-white border-2 border-blue-900;
 	}
 
 	.btn-white {
@@ -61,6 +61,14 @@
 	}
 
 	.btn-text {
-		@apply px-3 py-2 text-sm font-bold uppercase tracking-widest rounded-lg;
+		@apply px-3 py-2 font-bold rounded-lg;
+	}
+
+	.btn-text-sm {
+		@apply px-2 py-1 font-bold rounded-lg;
+	}
+
+	.btn-uppercase {
+		@apply uppercase tracking-widest text-sm;
 	}
 }

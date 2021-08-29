@@ -1,5 +1,5 @@
 <template>
-	<p class="text-sm font-semibold">Plugboard ({{ countPlugPoint }} / 10)</p>
+	<p class="text-sm font-bold">Plugboard ({{ countPlugPoint }} / 10)</p>
 
 	<div class=" mt-2">
 		<div class="flex justify-between">
@@ -30,20 +30,20 @@
 			</div>
 
 			<div>
-				<button @click="addPlugPoint" class="btn-3d btn-text btn-white">Add</button>
+				<button @click="addPlugPoint" class="btn-3d btn-text btn-white btn-uppercase">Add</button>
 			</div>
 		</div>
 
 		<div class="w-full border-gray-300 border-t-2 my-4"></div>
 
-		<div class="mt-2" v-for="(plug, index) in this.getPlugPoint" :key="index">
+		<div class="mt-2" v-for="(plug, index) in this.plugPoint" :key="index">
 			<ConfigPlugboardPairList :pointA="plug.pointA.char" :pointB="plug.pointB.char" :plugPointIndex="index" />
 		</div>
 	</div>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import ConfigPlugboardPairList from './ConfigPlugboardPairList.vue';
 
 export default {
@@ -76,7 +76,8 @@ export default {
 		}
 	},
 	computed: {
-		...mapGetters(['getPlugboardData', 'countPlugPoint', 'getPlugPoint'])
+		...mapGetters(['getPlugboardData', 'countPlugPoint']),
+		...mapState(['plugPoint'])
 	}
 };
 </script>
