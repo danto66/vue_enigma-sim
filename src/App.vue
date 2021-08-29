@@ -143,6 +143,7 @@ export default {
 		this.initRotorType();
 		this.initReflectorType();
 		this.initPlugboard();
+		document.title = 'Enigma Simulator';
 	}
 };
 </script>

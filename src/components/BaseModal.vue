@@ -1,9 +1,9 @@
 <template>
-	<div class="z-30 fixed top-0 left-0 w-full h-full table bg-black bg-opacity-50">
+	<div class="z-30 fixed top-0 left-0 w-full h-screen table bg-black bg-opacity-50">
 		<!-- modal wrapper -->
-		<div class="align-top table-cell p-4 sm:p-6 md:p-12">
+		<div class="flex-col h-screen p-4 sm:p-6 md:p-12">
 			<!-- modal container -->
-			<div class="mx-auto bg-white p-4 rounded-lg border-gray-900 border-2 overflow-y-auto h-full">
+			<div class="bg-white p-4 rounded-lg border-gray-900 border-2 h-full overflow-y-auto">
 				<div class="flex justify-between items-center">
 					<div class="text-xl font-bold">
 						{{ title }}
