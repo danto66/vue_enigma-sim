@@ -29,9 +29,6 @@
 			<li>Klik tombol <em>Encrypt</em></li>
 			<li>Pesan yang sudah didekripsi akan muncul di bagian <em>Encrypted Message</em></li>
 		</ul>
-
-		<h3>Cara Kerja</h3>
-		<blockquote>Silahkan Googling cara kerja mesin enigma **Teehee~!</blockquote>
 	</div>
 </template>
 
